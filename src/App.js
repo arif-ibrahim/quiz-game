@@ -1,13 +1,17 @@
 import React from 'react';
- 
-import './App.css';
+import './App.scss';
+import HomePage from './components/home/HomePage'
 
 function App() {
-  return (
-    <div>
-       hello world
-    </div>
-  );
+	return (
+		<div>
+			<main className="container">
+				<div className="row">
+					<HomePage />
+				</div>
+			</main>
+		</div>
+	);
 }
 
 export default App;
