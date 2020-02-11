@@ -7,7 +7,9 @@ function App() {
 		<div>
 			<main className="container">
 				<div className="row">
-					<HomePage />
+					<div className="col-md-12">
+						<HomePage />
+					</div>
 				</div>
 			</main>
 		</div>

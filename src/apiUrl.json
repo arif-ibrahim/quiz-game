@@ -1,0 +1,12 @@
+{
+    "backendUrl": "http://18.136.218.246/api/portal/v1",
+    "backendImageUrl": "http://18.136.218.246/api/portal/v1/",
+    "accessToken": "i09NIizZ5dZLoxFk+Roy8kOLmtZy66fdLUmzotrUbiU=",
+    "msisdn": "01844476978",
+    "pusherCredential": {
+      "key": "bf32f7a4ec69453bbb7a",
+      "cluster":"ap2",
+      "channel":"live-sports",
+      "crLiveEvent":"cr_live_score"
+    }
+}

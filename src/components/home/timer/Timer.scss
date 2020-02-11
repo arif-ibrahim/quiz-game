@@ -1,0 +1,34 @@
+
+
+.outer-timer{
+    margin-top: 64px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    .timer-wrapper{
+        -webkit-box-shadow: inset -2px 4px 42px 18px rgba(207, 31, 31, 0.84);
+        -moz-box-shadow: inset -2px 4px 42px 18px rgba(207, 31, 31, 0.84);
+        box-shadow: inset -2px 4px 42px 18px rgba(255, 94, 0, 0.877);
+     
+
+        position: relative;
+        max-width: 550px;
+        text-align: center;
+        margin: 0 auto;
+        border: 1px solid gainsboro;
+        border-radius: 2px;
+        padding: 0 0 10px 0;
+
+        .heading{
+            color: gray;
+        }
+    
+       
+    }
+}
+.ml-10{
+    margin-left: 20px;
+}
+.lh-50{
+    line-height: 50px;
+}
