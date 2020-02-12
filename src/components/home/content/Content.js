@@ -28,7 +28,8 @@ export default class Content extends Component {
         const {endVid} = this.state;
         return (
             <div>
-                {endVid ? <Video src={data} onVideoEnd={this.onVideoEnd} /> : <QuizPlay data={data} time={this.props.time}/>}
+                <Video src={data} onVideoEnd={this.onVideoEnd} /> 
+                 <QuizPlay data={data} time={this.props.time}/> 
             </div>
         )
     }

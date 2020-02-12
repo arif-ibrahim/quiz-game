@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './HomePage.scss';
 import Timer from './timer/Timer';
 import Content from './content/Content';
+import LeaderBoard from './board/LeaderBoard'
 import post from '../../http';
 
 
@@ -42,8 +43,8 @@ class HomePage extends Component {
         const {play, ques_ans, index} = this.state;
         return (
             <div className="home-page">
-              {/* {index > 0 ?  <Content data={ques_ans[index-1]} time={time}/> :null} */}
-                {(index <= ques_ans.length) && play ? <Content data={ques_ans[index-1]} time={time}/> : <Timer time={time}/>}
+              {/* <LeaderBoard/>  */}
+                {(index <= ques_ans.length) && play ? <Content data={ques_ans[index-1]} time={time}/> : (index > ques_ans.length) && play ? <LeaderBoard/> : <Timer time={time}/>}
             </div>
         )
     }

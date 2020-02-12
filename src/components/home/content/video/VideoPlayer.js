@@ -74,9 +74,7 @@ class VideoPlayer extends Component {
 
     render() {
         return (
-            <>
             <div id="player" ref={this.setupPlayer}/>
-            <div>hello</div></>
         );
     }
 }

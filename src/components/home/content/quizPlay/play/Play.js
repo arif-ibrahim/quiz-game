@@ -85,7 +85,7 @@ export default class Play extends Component {
         const { isCorrect, isClicked, } = this.state;
         const {data} = this.props;
         return (
-            <div className="play">
+            <div className="play mb-5">
                 <div className='row mt-3'>
                     <div className='col-md-6 col-sm-6 col-6 mb-4'>
                         <button id='btn-1' onClick={()=>this.clickAnswer(data.question_option_1, 'btn-1')} type="button" className={`btn btn-secondary btn-lg btn-block`} disabled={isClicked}>{data.question_option_1}</button></div>

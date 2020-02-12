@@ -4,7 +4,7 @@ import Timer from 'react-compound-timer';
 export default function Question({data, time}) {
     return (
         <div>
-            <div className="card text-center mt-5">
+            <div className="card text-center mt-1">
                 <div className="card-header ">
                     <Timer
                         initialTime={time}
