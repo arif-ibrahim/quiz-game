@@ -31,7 +31,7 @@ export default class Play extends Component {
                 isClicked:  true,
             })
             for (let i = 0; i < btnTag.length; i++) {
-                if (btnTag[i].textContent == this.props.data.question_ans) {
+                if (btnTag[i].textContent === this.props.data.question_ans) {
                     found = btnTag[i];
                     break;
                 }
@@ -48,6 +48,7 @@ export default class Play extends Component {
             }
 
             changeBtn()
+            localStorage.setItem('endAnswer',true);
 
              
         }
@@ -74,10 +75,17 @@ export default class Play extends Component {
             option2.classList.replace("btn-success", "btn-secondary");
             option3.classList.replace("btn-success", "btn-secondary");
             option4.classList.replace("btn-success", "btn-secondary");
-             this.setState({
-                isCorrect: -1,
-                isClicked: false,
-             })
+            if(localStorage.getItem('endAnswer')){
+                this.setState({
+                    isCorrect: -1,
+                    isClicked: true,
+                 })
+            }else{
+                this.setState({
+                    isCorrect: -1,
+                    isClicked: false,
+                 })
+            }
         }
       }
     
@@ -97,7 +105,7 @@ export default class Play extends Component {
                         <button id='btn-4' onClick={()=>this.clickAnswer(data.question_option_4, 'btn-4')} type="button" className={`btn btn-secondary btn-lg btn-block`} disabled={isClicked}>{data.question_option_4}</button></div>
                 </div>
                 <div className="answer">
-                    {isCorrect === 1 ? <img src={correct}/> : isCorrect === 0 ? <img src={wrong}/>: null}
+                    {isCorrect === 1 ? <img src={correct} alt="Correct"/> : isCorrect === 0 ? <img src={wrong} alt="Incorrect"/>: null}
                 </div>
             </div>
         )

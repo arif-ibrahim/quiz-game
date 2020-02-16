@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Player, PlayerEvent} from 'bitmovin-player/modules/bitmovinplayer-core';
+import {Player,} from 'bitmovin-player/modules/bitmovinplayer-core';
 import EngineBitmovinModule from 'bitmovin-player/modules/bitmovinplayer-engine-bitmovin';
 import MseRendererModule from 'bitmovin-player/modules/bitmovinplayer-mserenderer';
 import HlsModule from 'bitmovin-player/modules/bitmovinplayer-hls';
@@ -11,7 +11,7 @@ import StyleModule from 'bitmovin-player/modules/bitmovinplayer-style';
 import DashModule from 'bitmovin-player/modules/bitmovinplayer-dash';
 import XML from 'bitmovin-player/modules/bitmovinplayer-xml';
 
-import {UIFactory} from 'bitmovin-player/bitmovinplayer-ui';
+// import {UIFactory} from 'bitmovin-player/bitmovinplayer-ui';
 import 'bitmovin-player/bitmovinplayer-ui.css';
 
 Player.addModule(EngineBitmovinModule);
@@ -33,7 +33,26 @@ class VideoPlayer extends Component {
         super(props);
         this.state = {
             player: [],
+            test: 'aa'
         };
+    }
+
+    componentDidMount(){
+        // document.addEventListener('touchstart',  null, true);
+        let container = document.getElementById('player');
+        let playerConfig = {
+            key: '94452f78-8dfd-4d3b-9b47-59cad553a664',
+            playback: {
+                autoplay: true,
+                muted: false,
+            },
+            events: {
+                onPlaybackFinished: this.test,
+            }
+        };
+        let player = new Player(container, playerConfig);
+        // UIFactory.buildDefaultUI(player);
+        this.setState({player});
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -50,31 +69,36 @@ class VideoPlayer extends Component {
              
         }
     }
-     setupPlayer = async() => {
-        // document.addEventListener('touchstart',  null, true);
-        let container = document.getElementById('player');
-        let playerConfig = {
-            key: '94452f78-8dfd-4d3b-9b47-59cad553a664',
-            playback: {
-                autoplay: true,
-                muted: false,
-            },
-            events: {
-                onPlaybackFinished:  ()=>{
-                    console.log('finished')
-                }
-            }
-        };
-        let player = new Player(container, playerConfig);
-        // UIFactory.buildDefaultUI(player);
-        this.setState({player});
-    };
+
+    test = ()=>{
+        this.setState({
+            test: 'arifffffffffff'
+        })
+    }
+    //  setupPlayer = async() => {
+    //     // document.addEventListener('touchstart',  null, true);
+    //     let container = document.getElementById('player');
+    //     let playerConfig = {
+    //         key: '94452f78-8dfd-4d3b-9b47-59cad553a664',
+    //         playback: {
+    //             autoplay: true,
+    //             muted: false,
+    //         },
+    //         events: {
+    //             onPlaybackFinished: this.test,
+    //         }
+    //     };
+    //     let player = new Player(container, playerConfig);
+    //     // UIFactory.buildDefaultUI(player);
+    //     this.setState({player});
+    // };
 
  
 
     render() {
+        console.log(this.state.test)
         return (
-            <div id="player" ref={this.setupPlayer}/>
+            <div id="player"  />
         );
     }
 }

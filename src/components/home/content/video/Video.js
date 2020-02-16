@@ -4,10 +4,9 @@ import VideoPlayer from './VideoPlayer'
 
 export default function Video(props) {
     const src =  props.src.question_attachment_url;
-    const {onVideoEnd} = props;
     return (
         <div className="my-video" >
-           <VideoPlayer src={src} onVideoEnd={onVideoEnd} />
+           <VideoPlayer src={src} />
         </div>
     )
 }

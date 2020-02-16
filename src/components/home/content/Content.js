@@ -11,9 +11,7 @@ export default class Content extends Component {
         }
     }
 
-    onVideoEnd = ()=> {
-        console.log('hurrey... video ends');
-    }
+    
 
     componentDidMount(){
          
@@ -25,10 +23,9 @@ export default class Content extends Component {
     
     render() {
         const {data} = this.props;
-        const {endVid} = this.state;
         return (
             <div>
-                <Video src={data} onVideoEnd={this.onVideoEnd} /> 
+                <Video src={data}  /> 
                  <QuizPlay data={data} time={this.props.time}/> 
             </div>
         )

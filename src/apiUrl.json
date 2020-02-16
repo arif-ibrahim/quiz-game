@@ -1,12 +1,15 @@
 {
     "backendUrl": "http://18.136.218.246/api/portal/v1",
+    "backendArtisanUrl": "http://18.136.218.246",
     "backendImageUrl": "http://18.136.218.246/api/portal/v1/",
     "accessToken": "i09NIizZ5dZLoxFk+Roy8kOLmtZy66fdLUmzotrUbiU=",
     "msisdn": "01844476978",
     "pusherCredential": {
-      "key": "bf32f7a4ec69453bbb7a",
+      "key": "9989ac033eab30225d59",
       "cluster":"ap2",
-      "channel":"live-sports",
-      "crLiveEvent":"cr_live_score"
+      "channelPub":"quiz-question-view",
+      "channelPri":"quiz-subscribe",
+      "quiz_public_event": "quiz-public",
+      "quiz_private_event": "quiz-private"
     }
 }
